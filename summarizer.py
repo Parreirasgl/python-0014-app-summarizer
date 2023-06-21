@@ -21,7 +21,7 @@ def copiar():
     global permitido_copiar
     # Avalia se já foi escolhida uma pasta:
     if caminho == "":
-        messagebox.showinfo(title="Erro", message="Escolha uma pasta para guardar o rascunho.")
+        CTkMessagebox(title="Erro", message="Escolha uma pasta para guardar o rascunho.", cancel_button="cross")
         return
     # Avalia se botar de parar não foi acionado:
     if permitido_copiar == False:
@@ -43,7 +43,7 @@ def bloqueador():
     permitido_copiar = False
 
 janela = CTk()
-janela.iconbitmap("summarizer.ico")
+janela.iconbitmap(".\summarizer.ico")
 janela.title("Rascunhador")
 janela.minsize(400, 300)
 botao1 = CTkButton(janela, text="Escolher Local do Rascunho", command=abrir_pasta)
