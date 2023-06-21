@@ -1,4 +1,5 @@
-from tkinter import Tk, Button, messagebox, filedialog
+from customtkinter import CTk, CTkButton, filedialog
+from CTkMessagebox import CTkMessagebox
 import pyperclip
 
 permitido_copiar = False
@@ -41,14 +42,14 @@ def bloqueador():
     global permitido_copiar
     permitido_copiar = False
 
-janela = Tk()
+janela = CTk()
 janela.iconbitmap("summarizer.ico")
 janela.title("Rascunhador")
 janela.minsize(400, 300)
-botao1 = Button(janela, text="Escolher Local do Rascunho", command=abrir_pasta)
+botao1 = CTkButton(janela, text="Escolher Local do Rascunho", command=abrir_pasta)
 botao1.place(relx=0.5, rely=0.25, anchor="center")
-botao2 = Button(janela, text="Começar a Copiar", command=ativador)
+botao2 = CTkButton(janela, text="Começar a Copiar", command=ativador)
 botao2.place(relx=0.5, rely=0.50, anchor="center")
-botao3 = Button(janela, text="Parar de Copiar", command=bloqueador)
+botao3 = CTkButton(janela, text="Parar de Copiar", command=bloqueador)
 botao3.place(relx=0.5, rely=0.75, anchor="center")
 janela.mainloop()
