@@ -8,7 +8,10 @@ if sys.platform == "win32":
 
 exe = Executable(script='summarizer.py', base = base, icon='summarizer.ico')
 
-setup(name = "Summarizer",
-        version = "1.0",
-        description = "Copy from clipboard to a txt file.",
+includefiles = ["summarizer.ico"]
+
+setup(name = "nome",
+        version = "0.1",
+        description = "descricao",
+        options = {'build_exe': {'include_files':includefiles}},
         executables = [exe])
